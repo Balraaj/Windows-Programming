@@ -1,0 +1,11 @@
+echo -n "Enter your data (Press Enter and than CTRL+D to stop) : "
+cat>abc.txt
+
+c=$(cat abc.txt|wc -c)
+w=$(cat abc.txt|wc -w)
+l=$(cat abc.txt|wc -l)
+
+echo
+echo "Characters : $c"
+echo "Words : $w"
+echo "Lines : $l"

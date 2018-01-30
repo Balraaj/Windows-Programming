@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Demo6
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        Thread ob = Thread.currentThread();
+        System.out.println("Main thread information");
+        System.out.print(ob);
+
+        String name;
+        int pr;
+        System.out.print("\n\nEnter new name for thread : ");
+        name = in.nextLine();
+        System.out.print("Enter new priority : ");
+        pr = in.nextInt();
+
+        ob.setName(name);
+        ob.setPriority(pr);
+
+        System.out.println("\n\nMain thread information after modification ");
+        System.out.print(ob);
+    }
+}

@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1456120317 source:d:\programming\c c++\codeblocks\temp\filehandlingcpp.cpp
+	<iostream>
+	<fstream>
+
+1456133930 source:d:\programming\c c++\codeblocks\temp\cppio.cpp
+	<iostream>
+
+1456169107 source:d:\programming\c c++\codeblocks\temp\inheritence.cpp
+	<iostream>
+
+1456214463 source:d:\programming\c c++\codeblocks\temp\temp.cpp
+	<iostream>
+	<fstream>
+
+1456214656 source:d:\programming\c c++\codeblocks\temp\temp1.cpp
+	<iostream>
+	<fstream>
+
+1456832195 source:d:\programming\c c++\codeblocks\temp\complexaddition.cpp
+	<iostream>
+	<stdlib.h>
+
+1456837997 source:d:\programming\c c++\codeblocks\temp\copyconstructor.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+
+1456854718 source:d:\programming\c c++\codeblocks\temp\defaultparameter.cpp
+	<iostream>
+	<stdlib.h>
+

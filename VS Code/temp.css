@@ -1,0 +1,23 @@
+.top
+{
+    width: 1350px;
+    height: 50px;
+    background-color: darkgray;
+    border: 2px solid black;
+}
+
+.button
+{
+    width: 100px;
+    height: 50px;
+    float: left;
+    margin: 0px 118px;
+    line-height: 50px;
+    font-size: 22px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.button:hover
+{
+    color: white;
+}

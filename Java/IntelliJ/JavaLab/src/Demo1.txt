@@ -1,0 +1,62 @@
+
+class Figure
+{
+    double width,height;
+    Figure(double a,double b)
+    {
+        width = a;
+        height = b;
+    }
+
+    double area()
+    {
+        System.out.print("\nArea is not defined for this figure");
+        return 0;
+    }
+}
+
+class Triangle extends Figure
+{
+    Triangle(double a,double b)
+    {
+        super(a,b);
+    }
+
+    double area()
+    {
+        double temp = 0.5*(height*width);
+        return temp;
+    }
+}
+
+class Rectangle extends Figure
+{
+    Rectangle(double a,double b)
+    {
+        super(a,b);
+    }
+
+    double area ()
+    {
+        double temp = height*width;
+        return temp;
+    }
+}
+
+public class Demo1
+{
+    public static void main(String[] args)
+    {
+        Figure ob;
+        Triangle t = new Triangle(10,5);
+        Rectangle r = new Rectangle(23,10);
+
+        ob = t;
+        double area = ob.area();
+        System.out.print("\nArea of triangle is : "+area);
+
+        ob = r;
+        area = ob.area();
+        System.out.print("\nArea of rectangle is : "+area);
+    }
+}

@@ -1,0 +1,59 @@
+import java.util.Scanner;
+class Complex
+{
+    double real;
+    double img;
+
+    Complex(double a,double b)
+    {
+        real = a;
+        img = b;
+    }
+
+    void show()
+    {
+        System.out.print(real+" + "+img+" i");
+    }
+
+    Complex add(Complex obj)
+    {
+        Complex temp = new Complex(0,0);
+        temp.real = this.real + obj.real;
+        temp.img = this.img + obj.img;
+        return temp;
+    }
+}
+
+public class Demo
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        double a,b;
+
+        System.out.println("Enter first complex no : ");
+        System.out.print("Enter real part : ");
+        a = in.nextDouble();
+        System.out.print("Enter imaginary part : ");
+        b = in.nextDouble();
+
+        Complex c1 = new Complex(a,b);
+
+        System.out.println("\nEnter second complex no : ");
+        System.out.print("Enter real part : ");
+        a = in.nextDouble();
+        System.out.print("Enter imaginary part : ");
+        b = in.nextDouble();
+
+        Complex c2 = new Complex(a,b);
+
+        Complex c3 = c1.add(c2);
+
+        System.out.print("\n\nFirst no. is : ");
+        c1.show();
+        System.out.print("\nSecond no. is : ");
+        c2.show();
+        System.out.print("\n\nSum of these two numbers is : ");
+        c3.show();
+    }
+}

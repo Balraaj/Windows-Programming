@@ -1,0 +1,19 @@
+package Placement;
+
+public class PowerOf2
+{
+    private static boolean checkPower(int x)
+    {
+        while(x%2==0)
+        {
+            x/=2;
+        }
+        return x==1;
+    }
+
+    public static void main(String[] args)
+    {
+        System.out.print("5 is power of 2 : "+checkPower(5));
+        System.out.print("1024 is power of 2 : "+checkPower(1024));
+    }
+}

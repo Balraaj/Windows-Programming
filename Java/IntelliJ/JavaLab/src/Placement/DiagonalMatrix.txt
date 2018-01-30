@@ -1,0 +1,40 @@
+package Placement;
+
+public class DiagonalMatrix
+{
+    private static void printDiagonalMatrix(int[][] arr,int n,int m)
+    {
+        int currentRow = 0;
+        int currentColumn = 0;
+
+        while((currentRow<n)&&(currentColumn<m))
+        {
+            int row = currentRow;
+            int column = currentColumn;
+
+            while((row < n) && (column >= 0))
+            {
+                System.out.print(arr[row][column] + " ");
+                row++;
+                column--;
+            }
+
+            System.out.println();
+
+            if(currentColumn==m-1)
+            {
+                currentRow++;
+            }
+            else
+            {
+                currentColumn++;
+            }
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[][] arr = {{1,2,3},{4,5,6}};
+        printDiagonalMatrix(arr,2,3);
+    }
+}

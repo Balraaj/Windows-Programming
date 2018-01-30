@@ -1,0 +1,75 @@
+package Placement;
+
+/**
+ * Created by Balraj on 9/30/2017.
+ */
+public class KClosestElements
+{
+    private static int findCrossOver(int[] arr,int low,int high,int x)
+    {
+        int mid = (low+high)/2;
+        if(arr[low]>=x)
+        {
+            return low;
+        }
+        else if(arr[high]<=x)
+        {
+            return high;
+        }
+        else if((arr[mid]<=x)&&(arr[mid+1]>x))
+        {
+            return mid;
+        }
+        else if(arr[mid]<x)
+        {
+            return findCrossOver(arr,mid+1,high,x);
+        }
+        else
+        {
+            return findCrossOver(arr,low,mid-1,x);
+        }
+    }
+
+    private static void printKClosest(int[] arr,int low,int high,int x,int k)
+    {
+        int l = findCrossOver(arr,low,high,x);
+        int r = l+1;
+        int count = 0;
+
+        if(arr[l]==x)
+        {
+            l--;
+        }
+
+        while((l>=0)&&(r<=high)&&(count<k))
+        {
+            if(x-arr[l]<arr[r]-x)
+            {
+                System.out.print(arr[l--]+" ");
+            }
+            else
+            {
+                System.out.print(arr[r++]+" ");
+            }
+            count++;
+        }
+
+        while((count<k)&&(l>=0))
+        {
+            System.out.print(arr[l--]+" ");
+            count++;
+        }
+
+        while((count<k)&&(r<=high))
+        {
+            System.out.print(arr[r++]+" ");
+            count++;
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr = {23,25,29,45,102,103,200};
+        printKClosest(arr,0,6,160,1);
+    }
+}

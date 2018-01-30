@@ -1,0 +1,62 @@
+/* This program capitalizes first character of every word in the given string */
+
+package Placement;
+
+
+public class CapitalFirstLetter
+{
+    public static void main(String[] args)
+    {
+        StringBuilder str = new StringBuilder("    hello this is 9tring   and Who Are you    ");
+
+        capitalizeWords(str);
+        System.out.print(str);
+
+    }
+
+    private static void capitalizeWords(StringBuilder str)
+    {
+        int index = skipSpaces(str,0);
+        if(index>=0)
+        {
+            if((str.charAt(index)>=97) && (str.charAt(index)<=122))
+            {
+                str.setCharAt(index,(char)(str.charAt(index)-32));
+            }
+
+            while((index= findNextWord(str,index))>0)
+            {
+                if((str.charAt(index)>=97) && (str.charAt(index)<=122))
+                {
+                    str.setCharAt(index,(char)(str.charAt(index)-32));
+                }
+            }
+        }
+    }
+
+    private static int findNextWord(StringBuilder str, int index)
+    {
+        while((index<str.length()) && (str.charAt(index)!=' '))
+        {
+            index++;
+        }
+        return skipSpaces(str,index);
+    }
+
+    private static int skipSpaces(StringBuilder str, int index)
+    {
+        while((index<str.length())&&(str.charAt(index)==' '))
+        {
+            index++;
+        }
+
+        if(index>=str.length())
+        {
+            return -1;
+        }
+        else
+        {
+            return index;
+        }
+    }
+}

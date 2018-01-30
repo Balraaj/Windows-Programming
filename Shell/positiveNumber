@@ -1,0 +1,14 @@
+echo -n "Enter a number : "
+read n
+
+if [ $n -gt 0 ]
+then
+	echo "Number is positive"
+else
+	if [ $n -eq 0 ]
+	then
+		echo "Number is zero"
+	else
+		echo "Number is negative"
+	fi
+fi

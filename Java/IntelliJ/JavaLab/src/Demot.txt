@@ -1,0 +1,51 @@
+class MyThread implements Runnable
+{
+    String name;
+    Thread t;
+    MyThread(String n)
+    {
+        name = n;
+        t = new Thread(this,n);
+        t.setPriority(1);
+        t.start();
+    }
+
+    public void run()
+    {
+        try
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                if(name=="ONE")
+                {
+                    Thread.sleep(1000);
+                }
+                System.out.print("\nThread "+name+" : "+i);
+                Thread.sleep(1000);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println("Caught exception");
+        }
+    }
+
+}
+
+public class Demo
+{
+    public static void main(String[] args)
+    {
+        MyThread t1 = new MyThread("ONE");
+        MyThread t2 = new MyThread("TWO");
+
+        Thread t3 = Thread.currentThread();
+        t3.setPriority(1);
+
+        for(int i =0;i<10;i++)
+        {
+            System.out.print("\nThis is main thread : "+i);
+        }
+
+    }
+}

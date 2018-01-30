@@ -1,0 +1,114 @@
+import java.util.Scanner;
+abstract class Account
+{
+    double bal;
+    int ac_no;
+    String type;
+    Account(double x,int y,String z)
+    {
+        bal = x;
+        ac_no = y;
+        type = z;
+    }
+
+    public String toString()
+    {
+        System.out.println("\nAccount information ");
+        System.out.print("Account no : "+ac_no);
+        System.out.print("\nType      : "+type);
+        System.out.print("\nBalance   : "+bal);
+        return "";
+    }
+
+    void deposit(double x)
+    {
+        bal+=x;
+    }
+    abstract void withdraw(double x);
+
+}
+
+class SavingAc extends Account
+{
+    SavingAc(double x,int y)
+    {
+        super(x,y,"Savings");
+    }
+
+    void withdraw(double x)
+    {
+        if(x<=bal)
+        {
+            bal-=x;
+        }
+
+        else
+        {
+            System.out.print("Not enough balance");
+        }
+    }
+}
+
+class CreditAc extends Account
+{
+    CreditAc(double x,int y)
+    {
+        super(x,y,"Credit");
+    }
+
+    void withdraw(double x) {
+        if (x < (bal + 50000)) {
+            bal -= x;
+        }
+        else
+        {
+            System.out.print("Limit exceeded");
+        }
+
+    }
+}
+public class Demo2
+{
+    public static void main(String[] args)
+    {
+        int a;
+        Account obj;
+        Scanner in = new Scanner(System.in);
+        System.out.print("Choose an account type \n1. Savings account\n2. Credit account ");
+        System.out.print("\n\nEnter your choice : ");
+
+        a = in.nextInt();
+        if(a==1)
+        {
+            obj = new SavingAc(50000,1);
+        }
+        else
+        {
+            obj = new CreditAc(50000,2);
+        }
+
+        System.out.print(obj);
+
+        System.out.print("\n\nChoose an operation \n1. Deposit\n2. Withdraw");
+        System.out.print("\n\nEnter your choice : ");
+        a = in.nextInt();
+
+        double value;
+        System.out.print("Enter amount : ");
+        value = in.nextDouble();
+
+        if(a==1)
+        {
+            obj.deposit(value);
+        }
+        else
+        {
+            obj.withdraw(value);
+        }
+
+        System.out.print("\n\nAfter operation \n");
+        System.out.print(obj);
+
+    }
+
+}

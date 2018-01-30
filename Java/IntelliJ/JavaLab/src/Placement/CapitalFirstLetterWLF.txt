@@ -1,0 +1,57 @@
+package Placement;
+
+/**
+ * Created by Balraj on 9/29/2017.
+ */
+public class CapitalFirstLetterWLF
+{
+    public static void main(String[] args)
+    {
+        StringBuilder str = new StringBuilder("    hello this is 9tring   and Who Are you    ");
+
+        capitalizeWords(str);
+        System.out.print(str);
+
+    }
+
+    private static void capitalizeWords(StringBuilder str)
+    {
+        int index = skipSpaces(str,0);
+        if(index>=0)
+        {
+            str.setCharAt(index,Character.toUpperCase(str.charAt(index)));
+
+            while((index= findNextWord(str,index))>0)
+            {
+                str.setCharAt(index,Character.toUpperCase(str.charAt(index)));
+            }
+        }
+    }
+
+    private static int findNextWord(StringBuilder str, int index)
+    {
+        while((index<str.length()) && (str.charAt(index)!=' '))
+        {
+            index++;
+        }
+
+        return skipSpaces(str,index);
+    }
+
+    private static int skipSpaces(StringBuilder str, int index)
+    {
+        while((index<str.length())&&(str.charAt(index)==' '))
+        {
+            index++;
+        }
+
+        if(index>=str.length())
+        {
+            return -1;
+        }
+        else
+        {
+            return index;
+        }
+    }
+}

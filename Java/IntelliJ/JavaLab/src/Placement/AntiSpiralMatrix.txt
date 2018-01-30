@@ -1,0 +1,66 @@
+package Placement;
+
+public class AntiSpiralMatrix
+{
+    private static void printAntiSpiralMatrix(int[][] arr,int m, int n)
+    {
+        int startRow=0;
+        int endRow=m;
+        int startColumn=0;
+        int endColumn=n;
+
+        int[] x = new int[100];
+        int[] y = new int[100];
+        int k=0;
+        int l=0;
+
+        while((startRow<endRow)&&(startColumn<endColumn))
+        {
+            for(int i=startColumn;i<endColumn;i++)
+            {
+                x[k++]=startRow;
+                y[l++]=i;
+            }
+            startRow++;
+
+            for(int i=startRow;i<endRow;i++)
+            {
+                x[k++]=i;
+                y[l++]=endColumn-1;
+            }
+            endColumn--;
+
+            for(int i=endColumn-1;i>=startColumn;i--)
+            {
+                x[k++]=endRow-1;
+                y[l++]=i;
+            }
+            endRow--;
+
+            for(int i=endRow-1;i>=startRow;i--)
+            {
+                x[k++]=i;
+                y[l++]=startColumn;
+            }
+            startColumn++;
+        }
+
+        int startIndex = m*n-1;
+        int xStart=startIndex;
+        int yStart=startIndex;
+
+        while(xStart>=0)
+        {
+            System.out.print(arr[x[xStart--]][y[yStart--]]+" ");
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[][] arr = {{1,2,3,4,17},
+                        {5,6,7,8,18},
+                        {9,10,11,12,19},
+                        {13,14,15,16,20}};
+        printAntiSpiralMatrix(arr,4,5);
+    }
+}

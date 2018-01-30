@@ -1,0 +1,50 @@
+package JavaTraining;
+
+/**
+ * Created by Balraj on 6/5/2017.
+ */
+public class QuickSort
+{
+    public static void main(String[] args)
+    {
+        int[] arr = {123,2,2,1,1,-123,-12,0,-123,-123,-122,122,1,55555,-55555,0,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 };
+        sort(arr,0,arr.length-1);
+
+        for(int i:arr)
+        {
+            System.out.print(" "+i);
+        }
+    }
+
+    public static void sort(int[] arr,int start,int end)
+    {
+        if(start<end)
+        {
+            int pivotIndex = part(arr,start,end);
+            sort(arr,start,pivotIndex-1);
+            sort(arr,pivotIndex+1,end);
+        }
+    }
+
+    public static int part(int[] arr,int start,int end)
+    {
+        int pivotValue = arr[end];
+        int pivotIndex = start;
+
+        for(int i=start;i<end;i++)
+        {
+            if(arr[i]<pivotValue)
+            {
+                int temp = arr[pivotIndex];
+                arr[pivotIndex] = arr[i];
+                arr[i] = temp;
+                pivotIndex++;
+            }
+        }
+
+        arr[end]=arr[pivotIndex];
+        arr[pivotIndex]=pivotValue;
+
+        return pivotIndex;
+    }
+}

@@ -1,0 +1,41 @@
+package Placement;
+/*
+Given two sorted arrays this program prints consecutive numbers from both of them
+ */
+
+public class ConsecutiveNumbers
+{
+    private static void printConsecutive(int[] arr1,int[] arr2)
+    {
+        int n = 0, m = 0;
+        while((n < arr1.length) && (m < arr2.length))
+        {
+            if(arr1[n]<arr2[m])
+            {
+                System.out.print(arr1[n++]+" ");
+            }
+            else
+            {
+                System.out.print(arr2[m++]+" ");
+            }
+        }
+
+        while(n<arr1.length)
+        {
+            System.out.print(arr1[n++]+" ");
+        }
+
+        while(m<arr2.length)
+        {
+            System.out.print(arr2[m++]+" ");
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr1 = {23,45,56,57,58};
+        int[] arr2 = {19,20,21,30,31,44,46,56};
+
+        printConsecutive(arr1,arr2);
+    }
+}

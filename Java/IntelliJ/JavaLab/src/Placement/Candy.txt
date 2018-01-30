@@ -1,0 +1,84 @@
+// This is a program to solve the candy distribution problem listed on hackerrank
+
+package Placement;
+
+public class Candy
+{
+    /*
+    This is a slower method compared to the method used below which runs in linear time
+
+    private static int giveCandy(int[] rankings)
+    {
+        int[] sum = new int[rankings.length];
+        sum[0] = 1;
+        for(int i = 1; i < rankings.length; i++)
+        {
+            if(rankings[i]>rankings[i-1])
+            {
+                sum[i]=sum[i-1]+1;
+            }
+            else
+            {
+                sum[i]=1;
+                goBack(rankings,sum,i-1);
+            }
+        }
+
+        int total=0;
+        for(int k:sum)
+        {
+            total=total+k;
+        }
+        return total;
+    }
+
+    private static void goBack(int[] rankings,int[] sum,int index)
+    {
+      while((index>=0)&&(rankings[index]>rankings[index+1]))
+      {
+          if(sum[index]==sum[index+1])
+          {
+              sum[index]++;
+          }
+          index--;
+      }
+    }*/
+
+    private static long giveCandy(int[] rankings)
+    {
+        int[] sum = new int[rankings.length];
+        sum[0]=1;
+        for(int i=1;i<rankings.length;i++)
+        {
+            if(rankings[i]>rankings[i-1])
+            {
+                sum[i]=sum[i-1]+1;
+            }
+            else
+            {
+                sum[i]=1;
+            }
+        }
+
+        for(int i=rankings.length-2;i>=0;i--)
+        {
+            if(rankings[i]>rankings[i+1]&&sum[i]<=sum[i+1])
+            {
+                sum[i]=sum[i+1]+1;
+            }
+        }
+
+        long total=0;
+        for(long k:sum)
+        {
+            total = total+k;
+        }
+        return total;
+    }
+
+    public static void main(String[] args)
+    {
+        int[] rankings = {2,4,2,6,1,7,8,9,2,1};
+        System.out.print("Total is : "+giveCandy(rankings));
+    }
+}

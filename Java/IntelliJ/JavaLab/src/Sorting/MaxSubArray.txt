@@ -1,0 +1,90 @@
+package Sorting;
+
+public class MaxSubArray
+{
+    static int[] MaxCrossSub(int arr[],int start,int mid, int end)
+    {
+        int leftsum = -10000;
+        int sum = 0;
+        int maxleft = mid;
+        for(int i=mid;i>=start;i--)
+        {
+            sum = sum+arr[i];
+            if(sum>leftsum)
+            {
+                leftsum=sum;
+                maxleft = i;
+            }
+        }
+
+        int rightsum = -10000;
+        sum = 0;
+        int maxright=mid+1;
+
+        for(int i=mid+1;i<=end;i++)
+        {
+            sum=sum+arr[i];
+            if(sum>rightsum)
+            {
+                rightsum=sum;
+                maxright=i;
+            }
+        }
+
+        int[] temp = new int[3];
+
+        temp[0]=maxleft;
+        temp[1]=maxright;
+        temp[2]=leftsum+rightsum;
+
+        return temp;
+    }
+
+    static int[] maxsub(int arr[],int start,int end)
+    {
+        if(start==end)
+        {
+            int[] temp = new int[3];
+            temp[0] = start;
+            temp[1] = end;
+            temp[2] = arr[start];
+            return temp;
+        }
+        else
+        {
+            int mid=(start+end)/2;
+
+            int[] leftarr=maxsub(arr,start,mid);
+            int[] rightarr = maxsub(arr,mid+1,end);
+            int[] crossarr = MaxCrossSub(arr,start,mid,end);
+            int[] temp;
+
+            if((leftarr[2]>rightarr[2])&&(leftarr[2]>crossarr[2]))
+            {
+                temp = leftarr;
+            }
+            else if((rightarr[2]>leftarr[2])&&(rightarr[2]>crossarr[2]))
+            {
+                temp = rightarr;
+            }
+            else
+            {
+                temp = crossarr;
+            }
+
+            return temp;
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr = {-3,4,12,-23,7,34};
+
+        int[] temp = maxsub(arr,0,5);
+
+        System.out.print("Max is : "+temp[2]);
+        System.out.print("\n\nLeft is : "+temp[0]);
+        System.out.print("\n\nRight is : "+temp[1]);
+    }
+
+}

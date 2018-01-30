@@ -1,0 +1,43 @@
+i="y"
+
+while [ $i == "y" ]
+do
+	echo "1.Addition"
+	echo "2.Subtraction"
+	echo "3.Multiplication"
+	echo "4.Division"
+	echo
+	echo -n "Enter your choice : "
+	read ch
+	echo
+	echo -n "Enter first number : " 
+	read n1
+	echo -n "Enter second number : "
+	read n2
+	sum=0
+	case $ch in
+		1)
+		sum=$((n1+n2));;
+
+		2)
+		sum=$((n1-n2));;
+
+		3)
+		sum=$((n1*n2));;
+
+		4)
+		sum=$((n1/n2));;
+
+		*)
+		echo "Invalid choice";;
+	esac
+	echo "Result is : $sum"
+	echo
+	echo "Do u want to continue ?"
+	read i
+	if [ $i == "n" ]
+	then
+		exit
+	fi
+	echo
+done

@@ -1,0 +1,47 @@
+
+public class Demo3
+{
+    public static void main(String[] args)
+    {
+        if(args.length==0)
+        {
+            System.out.print("No arguments passed");
+        }
+        else
+        {
+            try
+            {
+                int value = Integer.parseInt(args[0]);
+                System.out.print("value is : "+value);
+            }
+            catch(NumberFormatException e)
+            {
+                System.out.print("\nString doesn't have appropriate integer representation");
+            }
+
+            try
+            {
+                int value = Integer.parseInt(args[1]);
+                System.out.print("\nValue is : "+value);
+            }
+            catch(NumberFormatException e)
+            {
+                System.out.print("\nString doesn't have appropriate integer representation");
+            }
+
+            try
+            {
+                int value = Integer.parseInt(args[2]);
+                System.out.print("\nValue is : "+value);
+            }
+
+            catch(NumberFormatException e)
+            {
+                System.out.print("\nString doesn't have appropriate integer representation");
+            }
+
+
+        }
+    }
+
+}

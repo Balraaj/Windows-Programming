@@ -1,0 +1,17 @@
+package Placement;
+
+/*This program sorts numbers based on dictionary */
+
+import java.util.Arrays;
+
+public class SortNumbersDictionary
+{
+    public static void main(String[] args)
+    {
+        Arrays.sort(args);
+        for(String str: args)
+        {
+            System.out.print(str+" ");
+        }
+    }
+}

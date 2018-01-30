@@ -1,0 +1,94 @@
+#outer{
+    overflow: hidden;
+    width:1330px;
+    height: 740px;
+    border: 3px solid darkgray;
+}
+#headstrip{
+    margin: 0px;
+      height: 55px;
+      background-color: lightgray;
+      border: 2px solid lightgray;
+      box-shadow: 0px 5px 5px darkgray,3px 0px 5px darkgray,-3px 0px 5px darkgray;
+
+    }
+
+#bottem{
+    margin-top: 600px;
+    width:1330px;
+    height:100px;
+    background-color: lightgray;
+    box-shadow: 0px -5px 5px darkgray;
+    }
+
+.button{
+    height: 58px;
+    width: 120px;
+    float: left;
+     margin: -2px 105px;
+
+}
+
+
+.button a{
+    display: block;
+    height: 60px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    line-height: 55px;
+    margin: 0px 0px;
+}
+
+a:hover{
+    
+    color: white;
+}
+
+
+#sidepane1{
+    margin: 10px 0px;
+    float: left;
+    width: 150px;
+    height: 580px;
+    background-color: lightgray;
+    box-shadow: 5px 0px 5px darkgray,0px -5px 5px darkgray,0px 3px 5px darkgray;
+}
+
+#sidepane2{
+    box-shadow: -5px 0px 5px darkgray,0px -5px 5px darkgray,0px 3px 5px darkgray;
+    margin: 10px 0px;
+    float: right;
+    width: 150px;
+    height: 580px;
+    background-color: lightgray;
+
+}
+
+
+#textcont{
+    position: absolute;
+    top: 80px;
+    left: 180px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 500px;
+    width: 1000px;
+    color: rgb(100,100,100);
+
+}
+
+#image{
+    position: absolute;
+    height: 240px;
+    top: 300px;
+    left: 500px;
+    box-shadow: 10px 3px 5px rgb(100,100,100), 10px 10px 5px rgb(100,100,100);
+    border: 1px solid lightgray;
+}
+
+#image a{
+    display: block;
+}

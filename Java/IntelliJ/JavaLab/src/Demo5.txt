@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+interface getset
+{
+    void set();
+    void show();
+}
+
+class Simple
+{
+    double no;
+    void set()
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("\nEnter a real no : ");
+        no = in.nextDouble();
+    }
+
+    void show()
+    {
+        System.out.print("\nReal no. is : "+no);
+    }
+}
+
+class Complex
+{
+    double real,img;
+    void set()
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.print("\nEnter a complex no ");
+        System.out.print("\nReal part : ");
+        real = in.nextDouble();
+        System.out.print("Imaginary part : ");
+        img = in.nextDouble();
+    }
+
+    void show()
+    {
+        System.out.print("\nComplex no. is : "+real+" + "+img+"i");
+    }
+
+}
+
+public class Demo5
+{
+    public static void main(String[] args)
+    {
+        Simple s = new Simple();
+        s.set();
+
+        Complex c = new Complex();
+        c.set();
+
+        s.show();
+        c.show();
+    }
+
+}
