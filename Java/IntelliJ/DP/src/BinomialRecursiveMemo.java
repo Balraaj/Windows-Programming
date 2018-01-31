@@ -29,6 +29,6 @@ public class BinomialRecursiveMemo
             }
         }
 
-        System.out.println("bin(10,5) : "+bin(100,50));
+        System.out.println("bin(10,5) : "+bin(10,5));
     }
 }

@@ -1,7 +1,7 @@
 /**
  * Created by Balraj on 28-Jan-18.
  *
- * Given two strings check if they are one edit away. (CTCI)
+ * Given two strings check if they are one edit away. (CTCI 1.5)
  */
 public class OneAway
 {
@@ -38,7 +38,7 @@ public class OneAway
                 {
                     flag=true;
                     /*
-                    Following if is added to handle the insert case (when lengts are not equal).
+                    Following if is added to handle the insert case (when lengths are not equal).
                     once we find a character mismatch we increment the index of larger array.
                     but index of smaller array must stay the same.
                     that is why j is decremented to keep it same.
