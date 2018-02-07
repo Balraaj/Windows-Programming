@@ -37,7 +37,7 @@ public class MaximumSubArray
 
     private static int[] findMaxCross(int[] arr,int start,int mid,int end)
     {
-        int leftSum=-50000;
+        int leftSum=-50000; // negative infinity
         int sum=0;
         int leftIndex=0;
 
@@ -51,7 +51,7 @@ public class MaximumSubArray
             }
         }
 
-        int rightSum=-50000;
+        int rightSum=-50000;  // negative infinity
         int rightIndex=0;
         sum=0;
 

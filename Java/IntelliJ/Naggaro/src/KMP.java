@@ -42,7 +42,7 @@ public class KMP
         {
             char c = text.charAt(i);
             while((k>0)&&(c!=pattern.charAt(k)))  // Here we are matching ith text char with (k+1)th pattern char
-            {                                 // because indices start from 0
+            {                                    //  because indices start from 0
 
                 k = prefix[k-1];
             }
