@@ -81,7 +81,7 @@ public class LCS
 
     public static void main(String[] args)
     {
-        String X = "AaBCxxxHT";
+        String X = "";
         String Y = "ADDDDDBCCCCCxRRRRRHdddddxddT";
         LCSLength(X,Y);
         printLCS(X,X.length(),Y.length());
