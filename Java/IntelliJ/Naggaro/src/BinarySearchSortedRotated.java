@@ -4,6 +4,7 @@
  */
 public class BinarySearchSortedRotated
 {
+    private static final int NOTFOUND = -1;
     private static int find(int[] arr,int start,int end,int key)
     {
         if(start>end)
@@ -38,10 +39,46 @@ public class BinarySearchSortedRotated
         }
     }
 
+    private static int findIterative(int[] arr,int value)
+    {
+        int start = 0;
+        int end = arr.length-1;
+        while(start<end)
+        {
+            int mid = (start+end)/2;
+            if(arr[mid]==value) return mid;
+
+            if(arr[mid]>=arr[start]) // check which part is sorted
+            {
+                if((value>=arr[start])&&(value<=arr[mid]))
+                {
+                    end = mid;
+                }
+                else
+                {
+                    start = mid+1;
+                }
+            }
+            else
+            {
+                if((value>=arr[mid])&&(value<=arr[end]))
+                {
+                    start = mid;
+                }
+                else
+                {
+                    end = mid-1;
+                }
+            }
+        }
+
+        return start;
+    }
+
     public static void main(String[] args)
     {
-        int[] arr={7,8,1,2,2,3,4,5};
-        System.out.println("1 lies at : "+find(arr,0,arr.length-1,2));
+        int[] arr={7,8,1,2,2,3,4,6};
+        System.out.println("1 lies at : "+findIterative(arr,5));
     }
 
 }
