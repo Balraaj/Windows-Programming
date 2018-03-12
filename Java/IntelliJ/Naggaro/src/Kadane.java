@@ -5,31 +5,31 @@ public class Kadane
 {
     private static void findMaxSumSubArray(int[] arr)
     {
-        int start = 0;
-        int end = 0;
-        int s = 0;
-        int maxSoFar = arr[0];
-        int maxEndingHere = 0;
+        int globalStart = 0;
+        int globalEnd = 0;
+        int localStart = 0;
+        int globalMax = arr[0];
+        int localMax = 0;
 
         for(int i =0;i<arr.length;i++)
         {
-            maxEndingHere+=arr[i];
-            if(maxSoFar<maxEndingHere)
+            localMax+=arr[i];
+            if(globalMax<localMax)
             {
-                maxSoFar=maxEndingHere;
-                start=s;
-                end=i;
+                globalMax=localMax;
+                globalStart=localStart;
+                globalEnd=i;
             }
-            if(maxEndingHere<0)
+            if(localMax<0)
             {
-                maxEndingHere=0;
-                s=i+1;
+                localMax=0;
+                localStart=i+1;
             }
         }
 
-        System.out.println("Maximum sum : " +maxSoFar);
-        System.out.println("Starts at : "+start);
-        System.out.println("Ends at : "+end);
+        System.out.println("Maximum sum : " +globalMax);
+        System.out.println("Starts at : "+globalStart);
+        System.out.println("Ends at : "+globalEnd);
     }
 
     public static void main(String[] args)

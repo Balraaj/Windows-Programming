@@ -1,0 +1,4 @@
+Hello this is my file
+it is a sample text file
+created for the purpose of java IO testing
+this file is being used to test the IO functionality of java
