@@ -24,6 +24,9 @@ public class Kadane
             {
                 localMax=0;
                 localStart=i+1;
+                // if localmax goes below 0 then we know that any possible maxsum subarray that lies beyond this point
+                // can not possibly start from the ith index. as inclusion of ith index in the localmax made it negative.
+                // so we set local start to i+1
             }
         }
 

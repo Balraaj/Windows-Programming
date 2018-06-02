@@ -30,6 +30,7 @@ class FindPermutation
         }
 
         return (count==perm.length());
+        // we can also check if every element of arr is 0. that will also require only constant time.
     }
 
     public static void main(String[] args)

@@ -152,9 +152,9 @@ public class SinglyLinkedList
     {
         // This method calculates sum of two SinglyLinkedLists and returns a new SinglyLinkedList as result.
         // Each node of list stores one digit of the number and number is stored in reverse order. for example
-        // list one is as :- 9->3->8->5
-        // list two is as :- 4->2->5->8
-        // result list is :- 3->6->3->4->1
+        // list one is as :- 9->3->8->5 (5839)
+        // list two is as :- 4->2->5->8 (8524)
+        // result list is :- 3->6->3->4->1 (14363)
 
         ListNode runnerOne = this.head;
         ListNode runnerTwo = secondList.head;
